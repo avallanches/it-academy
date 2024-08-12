@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Footer from "./components/footer";
 import Header from "./components/header";
-import { PagesContainer } from "./components/pagesContainer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,13 +19,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <PagesContainer>
-        <Header />
+      <Header />
         <main className="min-h-[50vh]">
-          {children}
+            {children}
         </main>
         <Footer />
-        </PagesContainer>
       </body>
     </html>
   );

@@ -39,12 +39,9 @@ const Header: React.FC = () => {
     <>
       <header className="bg-white text-gray-800 py-4 border-b border-gray-300">
         <div className="container mx-auto flex justify-between items-center">
-          <div className="flex items-center justify-center">
+          <div>
             <Link href="/">
-              <Image src="/assets/images/logo.svg" alt="Logo" width={80} height={80} />
-            </Link>
-            <Link href="/">
-              <span className="ml-3 text-3xl font-bold text-blue-800">AI ACADEMY</span>
+              <Image src="/assets/images/logo.png" alt="Logo" width={250} height={100} />
             </Link>
           </div>
           
