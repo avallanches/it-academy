@@ -7,9 +7,9 @@ const Footer = () => {
         </p>
         <p className="text-sm mt-2">
           Подпишитесь на нас в 
-          <a href="#" className="text-blue-400 hover:text-blue-500 mx-1">Facebook</a>, 
-          <a href="#" className="text-blue-400 hover:text-blue-500 mx-1">Twitter</a>, и 
-          <a href="#" className="text-blue-400 hover:text-blue-500 mx-1">Instagram</a>.
+          <a href="https://kg.linkedin.com/company/ai-academy-kg" className="text-blue-400 hover:text-blue-500 mx-1">LinkedIn</a>, 
+          <a href="https://www.facebook.com/itacademy.kg/?locale=ru_RU" className="text-blue-400 hover:text-blue-500 mx-1">Facebook</a>, и 
+          <a href="https://www.instagram.com/aiacademykg/" className="text-blue-400 hover:text-blue-500 mx-1">Instagram</a>.
         </p>
       </div>
     </footer>

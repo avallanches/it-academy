@@ -6,7 +6,7 @@ import { MdOutlineSchool, MdWork, MdFlag, MdComputer } from 'react-icons/md';
 import { Button } from "./components/ui/button";
 import Image from 'next/image';
 import Link from "next/link";
-
+import Test from "./components/ui/test";
 
 const categories = [
   {
@@ -121,14 +121,18 @@ export default function Home() {
       {/* Section 1 */}
       <div className="relative h-screen w-full bg-cover bg-center p-20" style={{ backgroundImage: "url('/assets/images/background.jpg')" }}>
         <div className="flex flex-col w-full h-full justify-between p-4">
-          <div className="flex flex-col w-full md:w-1/2 h-2/3 justify-between py-4">
-            <h1 className="text-gray-50 text-5xl md:text-6xl font-medium" style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}>Хватит терять время на неэффективные курсы!</h1>
-            <h4 className="text-gray-50 text-2xl md:text-2xl mt-2 dont-semibold" style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}>
+          <div className="flex flex-col w-2/3 md:w-1/2 h-2/3 justify-between py-4">
+            <h1 className="text-gray-50 text-5xl md:text-3xl font-medium" style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}>Хватит терять время на неэффективные курсы!</h1>
+            <h4 className="text-gray-50 text-4xl md:text-2xl mt-2 dont-semibold" style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}>
               Станьте профессионалом в аналитике данных всего за <span className="text-blue-600 font-bold" style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}>6 месяцев</span> <br />
               с <span className="text-blue-600 font-bold">AI ACADEMY</span> и начните свою карьеру с гарантированной стажировки
             </h4>
           </div>
-          <div className="flex flex-row items-center pt-4 md:mt-0 absolute bottom-4 left-15">
+          <div>
+            <p className="text-white ml-1 text-base" style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}>Ответьте на три вопроса и получите бонусы</p>
+              <Test/>
+          </div>
+          <div className="flex flex-row items-center pt-2 md:mt-0 absolute bottom-4 left-15">
             <MdDeveloperMode className="text-white" size={24} />
             <p className="text-white ml-1 text-base" style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}>Бесплатное пробное занятие — убедитесь сами!</p>
           </div>
@@ -153,7 +157,7 @@ export default function Home() {
         <div>
         </div>
           {/* Section 3 */}
-          <div className="py-10">
+          <div id="aboutus" className="py-10">
             <h1 className="text-blue-800 text-4xl md:text-6xl font-semibold text-center">Почему именно AI Академия?</h1>
 
             <div className="container mx-auto px-4 py-12">
@@ -226,12 +230,12 @@ export default function Home() {
             </div>
             <div className="flex flex-row h-1/2 pt-3">
               <form action="" className="border-b border-gray-900 mr-3"><input type="text" placeholder="Номер телефона" className="outline-none"/></form>
-              <Button>Записаться на мастер-класс</Button>
+              <Button className="ml-2 bg-academy-sky hover:bg-academy-sky-hover text-white px-5 py-2 duration-300 rounded-xl">Записаться на мастер-класс</Button>
             </div>
         </div>
 
         {/* Section 5 - преподы */}
-        <div className="container mx-auto py-10">
+        <div id="teachers" className="container mx-auto py-10">
         <h2 className="text-3xl font-bold text-center text-blue-800 mb-12">Наши преподаватели</h2>
         <div className="grid grid-cols-5 md:grid-cols-2 sm:grid-cols-3 gap-6">
           {teachers.map((teacher, index) => (
@@ -264,7 +268,7 @@ export default function Home() {
       </div>
 
       {/* Section 6 - courses */}
-      <div className="container mx-auto p-5">
+      <div id="courses" className="container mx-auto p-5">
       <h2 className="text-3xl font-bold text-center text-blue-800 mb-12">Доступные курсы</h2>
       <div className="grid grid-cols-2 sm:grid-cols-1 gap-4">
       {courses.map((course, index) => (

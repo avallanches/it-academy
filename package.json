@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@heroicons/react": "^2.1.5",
     "@react-md/icon": "^5.1.6",
     "@react-md/theme": "^5.1.6",
     "@react-md/typography": "^5.1.6",

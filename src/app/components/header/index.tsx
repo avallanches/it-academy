@@ -5,10 +5,11 @@ import { Button } from '../ui/button';
 import { Modal } from '../ui/modal';
 import { Textfield } from '../ui/textfield';
 import { useDisclosure } from '../hooks/useDisclosure';
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { MdOutlinePhone } from 'react-icons/md'
-import { MdOutlineEmail } from "react-icons/md";
+import { MdOutlinePhone } from 'react-icons/md';
+import { MdOutlineEmail } from 'react-icons/md';
+
 
 interface Form {
   phone: string;
@@ -21,6 +22,8 @@ const Header: React.FC = () => {
     onClose: onModaClose,
     onOpen: onModalOpen,
   } = useDisclosure();
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const {
     handleSubmit,
@@ -35,21 +38,47 @@ const Header: React.FC = () => {
     reset();
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <>
-      <header className="bg-white text-gray-800 py-4 border-b border-gray-300">
+      <header className="h-20 sticky top-0 bg-white text-gray-800 py-2 border-b border-gray-300 z-50 flex items-center">
         <div className="container mx-auto flex justify-between items-center">
-          <div>
-            <Link href="/">
-              <Image src="/assets/images/logo.png" alt="Logo" width={250} height={100} />
+          <div className="flex items-center">
+            <Link href="/" aria-label="Homepage">
+              <Image
+                src="/assets/images/logo.png"
+                alt="Logo"
+                width={250}
+                height={60}
+                loading="lazy"
+              />
             </Link>
           </div>
-          
-          <div className='flex flex-row'>
-            <div className='mr-8'>
-            <Link
-                href="tel: +996706123456"
+
+          <nav className="flex items-center space-x-8">
+            <Link href="/" className="text-gray-800 hover:text-blue-600">
+              Главная
+            </Link>
+            <Link href="/#aboutus" className="text-gray-800 hover:text-blue-600">
+              О нас
+            </Link>
+            <Link href="/#teachers" className="text-gray-800 hover:text-blue-600">
+              Преподаватели
+            </Link>
+            <Link href="/#courses" className="text-gray-800 hover:text-blue-600">
+              Курсы
+            </Link>
+          </nav>
+
+          <div className="flex items-center space-x-4">
+            <div className="mr-8">
+              <Link
+                href="tel:+996706123456"
                 className="flex items-center text-sm space-x-2 hover:scale-110 duration-300 hover:underline"
+                aria-label="Call us"
               >
                 <MdOutlinePhone className="w-6 h-6" />
                 <p>0 (702) 00-05-62</p>
@@ -57,18 +86,20 @@ const Header: React.FC = () => {
               <Link
                 href="mailto:aiacademy.ceo@gmail.com"
                 className="flex items-center text-sm space-x-2 hover:scale-110 duration-300 hover:underline"
+                aria-label="Email us"
               >
                 <MdOutlineEmail className="w-6 h-6" />
                 <p>aiacademy.ceo@gmail.com</p>
               </Link>
             </div>
 
-          <Button
-            onClick={onModalOpen}
-            className="bg-academy-sky hover:bg-academy-sky-hover text-white px-5 py-2 rounded-lg"
-          >
-            Заказать звонок
-          </Button>
+            <Button
+              onClick={onModalOpen}
+              className="bg-academy-sky hover:bg-academy-sky-hover text-white px-5 py-2 duration-300 rounded-xl"
+              aria-label="Order a call"
+            >
+              Заказать звонок
+            </Button>
           </div>
         </div>
       </header>
