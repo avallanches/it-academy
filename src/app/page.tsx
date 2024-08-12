@@ -225,7 +225,7 @@ export default function Home() {
               <p className="pt-2">Оставьте заявку и мы запишем Вас на мастер-класс</p>
             </div>
             <div className="flex flex-row h-1/2 pt-3">
-              <form action="" className="border-b border-gray-900 mr-3"><input type="text" placeholder="Номер телефона"/></form>
+              <form action="" className="border-b border-gray-900 mr-3"><input type="text" placeholder="Номер телефона" className="outline-none"/></form>
               <Button>Записаться на мастер-класс</Button>
             </div>
         </div>

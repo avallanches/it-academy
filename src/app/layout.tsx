@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Footer from "./components/footer";
 import Header from "./components/header";
+import FloatingButton from "./components/ui/floatingButton";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +24,7 @@ export default function RootLayout({
         <main className="min-h-[50vh]">
             {children}
         </main>
+        <FloatingButton />
         <Footer />
       </body>
     </html>
