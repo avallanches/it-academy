@@ -44,7 +44,7 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <header className="h-20 sticky top-0 bg-white text-gray-800 py-2 border-b border-gray-300 z-50 flex items-center">
+      <header className="h-auto lg:h-20 sticky top-0 bg-white text-gray-800 py-2 border-b border-gray-300 z-50 flex items-center">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center">
             <Link href="/" aria-label="Homepage">

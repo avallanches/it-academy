@@ -31,9 +31,9 @@ const config: Config = {
     },
     screens: {
       phone: '320px',
-      tablet: '820px',
+      tablet: '640px',
       laptop: '1024px',
-      desktop: '1440px',
+      desktop: '1280px',
     },
   },
   plugins: [],

@@ -1,4 +1,5 @@
 'use client';
+import React, { useState } from 'react';
 import { PagesContainer } from "./components/pagesContainer";
 import { MdDeveloperMode } from "react-icons/md";
 import CategoryBlock from "./components/categoryblock";
@@ -7,6 +8,9 @@ import { Button } from "./components/ui/button";
 import Image from 'next/image';
 import Link from "next/link";
 import Test from "./components/ui/test";
+import 'react-phone-input-2/lib/style.css';
+import { LiaFlagUsaSolid } from "react-icons/lia";
+
 
 const categories = [
   {
@@ -120,7 +124,7 @@ export default function Home() {
     <main className="flex flex-col min-h-screen">
       {/* Section 1 */}
       <div className="relative h-screen w-full bg-cover bg-center p-20" style={{ backgroundImage: "url('/assets/images/background.jpg')" }}>
-        <div className="flex flex-col w-full h-full justify-between p-4">
+        <div className="flex flex-col w-full h-full justify-between p-4 mx-auto">
           <div className="flex flex-col w-2/3 md:w-1/2 h-2/3 justify-between py-4">
             <h1 className="text-gray-50 text-5xl md:text-3xl font-medium" style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}>Хватит терять время на неэффективные курсы!</h1>
             <h4 className="text-gray-50 text-4xl md:text-2xl mt-2 dont-semibold" style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}>
@@ -229,15 +233,32 @@ export default function Home() {
               <p className="pt-2">Оставьте заявку и мы запишем Вас на мастер-класс</p>
             </div>
             <div className="flex flex-row h-1/2 pt-3">
-              <form action="" className="border-b border-gray-900 mr-3"><input type="text" placeholder="Номер телефона" className="outline-none"/></form>
-              <Button className="ml-2 bg-academy-sky hover:bg-academy-sky-hover text-white px-5 py-2 duration-300 rounded-xl">Записаться на мастер-класс</Button>
-            </div>
+            <form action="" className="border-b border-gray-900 mr-3 flex items-center">
+              <select className="outline-none border-r-2 border-gray-900 pr-2 bg-transparent">
+                <option value="+996"><LiaFlagUsaSolid />+996</option>
+                <option value="+7">+7</option> Казахстан
+                <option value="+992">+992</option> Таджикистан
+                <option value="+998">+998</option> Узбекистан
+                <option value="+993">+993</option> Туркменистан
+                <option value="+7">+7</option> Россия
+              </select>
+              <input
+                type="text"
+                placeholder="Номер телефона"
+                className="outline-none pl-2"
+                />
+            </form>
+            <Button className="ml-2 bg-academy-sky hover:bg-academy-sky-hover text-white px-5 py-2 duration-300 rounded-xl">
+               Записаться на мастер-класс
+            </Button>
+</div>
+
         </div>
 
         {/* Section 5 - преподы */}
         <div id="teachers" className="container mx-auto py-10">
         <h2 className="text-3xl font-bold text-center text-blue-800 mb-12">Наши преподаватели</h2>
-        <div className="grid grid-cols-5 md:grid-cols-2 sm:grid-cols-3 gap-6">
+        <div className="grid grid-cols-5 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {teachers.map((teacher, index) => (
             <div key={index} className="bg-white rounded-lg shadow-lg p-6 text-center">
               <div className="flex justify-center mb-4">

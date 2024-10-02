@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import TestModal from '../testmodal';
 
-
 const Test: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [answers, setAnswers] = useState({ question1: '', question2: '' });
@@ -17,9 +16,32 @@ const Test: React.FC = () => {
     setPhoneNumber(e.target.value);
   };
 
-  const handleTestSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleTestSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSubmitted(true);
+    
+    const formData = {
+      question1: answers.question1,
+      question2: answers.question2,
+      phoneNumber: phoneNumber,
+    };
+
+    try {
+      const response = await fetch('/api/form-handler', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+      } else {
+        console.error('Form submission failed');
+      }
+    } catch (error) {
+      console.error('An error occurred:', error);
+    }
   };
 
   const handleOpenModal = () => {
